@@ -69,6 +69,7 @@ resource "aws_instance" "python_app_instance" {
   subnet_id = aws_subnet.python_app_subnet.id
   vpc_security_group_ids = [aws_security_group.python_app_sg.id]
   instance_type = "t2.micro"
+  key_name = "kajal-eng-48-first-key"
   associate_public_ip_address = true
   user_data = data.template_file.app_init.rendered
   tags = {
